@@ -1,8 +1,7 @@
 import React from "react";
-import Logo from "../src/Assets/svg/Logo.svg";
+import Logo from "../../Assets/svg/Logo.svg";
 import { Link } from "react-router-dom";
-
-const Login = () => {
+const SignUp = () => {
   return (
     <div className="px-6 py-4">
       <div className="flex justify-center w-full">
@@ -10,15 +9,17 @@ const Login = () => {
       </div>
       <div className="flex flex-col mt-12">
         <span className="text-[30px] font-bold text-[#595959] mb-4">
-          Welcome Back!
+          Create Account
         </span>
         <div className="font-bold">
           <span className="text-base text-[#8A8B8B]">
-            Don't have an account?
+            Already have an account?
           </span>
 
-          <span className="text-[red]"> Sign up now!</span>
-          
+          <Link to="/" className="text-[red]">
+            {" "}
+            Sign in!
+          </Link>
         </div>
       </div>
       <div className="flex flex-col">
@@ -29,25 +30,22 @@ const Login = () => {
         />
 
         <input
-          placeholder={"Password"}
-          type={"password"}
+          placeholder={"Full Name"}
+          type={"text"}
           className="outline-none border-b-2 p-2 mt-10 "
         />
-        <div className="mt-12 flex justify-between items-center">
-          <div className="text-[#8A8B8B] flex items-center ">
-            <input type={"checkbox"} className="outline-none " />
-            <span className="font-normal pl-1 text-[15px]"> Remember me</span>
-          </div>
-          <div className="font-bold text-[#8A8B8B] text-[15px]">
-            Forgot Password?
-          </div>
-        </div>
+        <input
+          placeholder={"Phone Number"}
+          type={"text"}
+          className="outline-none border-b-2 p-2 mt-10 "
+        />
+        
       </div>
       <div className="cursor-pointer mt-16 flex items-center justify-center bg-[#0E4E48] rounded-full p-3 text-[#fff] font-">
-        Sign in
+        Submit
       </div>
     </div>
   );
 };
 
-export default Login;
+export default SignUp;

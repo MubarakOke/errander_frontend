@@ -6,6 +6,7 @@ import Errander from "./pages/Errander/index";
 import Admin from "./pages/Admin/index";
 import CustomerSignUp from "./pages/customer/signUp";
 import Home from "./pages/customer/home/home";
+import Profile from "./pages/customer/Profile/profile";
 const App = () => {
   return (
     <div>
@@ -13,7 +14,7 @@ const App = () => {
         <Route path="/" element={<Login />} />
         <Route path="/Customer" element={<Customer />}>
           <Route path="/Customer/Home" element={<Home />} />
-          <Route path="/Customer/Profile" element={null} />
+          <Route path="/Customer/Profile" element={<Profile />} />
           <Route path="/Customer/Blog" element={null} />
           <Route path="/Customer/zxcv" element={null} />
         </Route>

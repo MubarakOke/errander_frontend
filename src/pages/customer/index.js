@@ -109,7 +109,7 @@ const Index = () => {
         }}
         className={`${
           hamburger ? "blur-sm" : "blur-none"
-        } h-screen pt-[150px] px-12 z-0`}
+        } h-screen pt-[150px]  z-0`}
       >
         <Outlet />
       </div>

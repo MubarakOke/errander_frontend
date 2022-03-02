@@ -11,7 +11,7 @@ const Home = () => {
   };
 
   return (
-    <>
+    <div className="px-12">
       <div>
         <div className="flex items-center justify-between w-full ">
           <div
@@ -58,7 +58,7 @@ const Home = () => {
         {activeTab === 1 && <Running />}
         {activeTab === 2 && <History />}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,16 +1,19 @@
 import React from "react";
-import Avatar from "../../../Assets/image/Avatar.png";
+import Avatar from "../../../Assets/svg/Avatar.svg";
 import Edit from "../../../Assets/svg/edit.svg";
+import {Link} from "react-router-dom"
 const Profile = () => {
   return (
     <div className="px-8">
       <div className="flex justify-center items-center">
-        <div className="shadow-[0px_-3px_21px_4px_rgba(0,0,0,0.25)] rounded-full flex justify-center items-center pt-[1.5%] px-[1%] w-[35%]">
-          <img src={Avatar} alt="Avatar" />
-        </div>
+        <img src={Avatar} alt="Avatar" />
       </div>
-      <div className="flex justify-end cursor-pointer">
-        <img src={Edit} alt="Edit" />
+
+      <div className="flex justify-end ">
+        <Link to="/CustomerProfileEdit">
+          {" "}
+          <img src={Edit} alt="Edit" className="cursor-pointer" />
+        </Link>
       </div>
       <div className="flex justify-center">
         <span className="font-bold text-[26px] font-[Roboto]">

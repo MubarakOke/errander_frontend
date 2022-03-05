@@ -8,12 +8,14 @@ import Home from "./pages/customer/home/home";
 import Profile from "./pages/customer/Profile/profile";
 import CustomerProfileEdit from "./pages/customer/Profile/CustomerProfileEdit";
 import CreateOrder from "./pages/customer/createOrder";
+import OrderDetails from "./pages/customer/orderDetails";
 
 const App = () => {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Login />} />
+        <Route path="/Customer/OrderDetails" element={<OrderDetails />} />
 
         <Route path="/Customer/Home" element={<Home />} />
         <Route path="/Customer/Profile" element={<Profile />} />

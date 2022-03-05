@@ -31,7 +31,7 @@ const CreateOrder = () => {
           />
         </div>
         <div className="flex justify-center items-center mt-4">
-          <div className="p-4 bg-[#D7EBE2]  w-[16%] rounded-full">
+          <div className="p-4 bg-[#D7EBE2]  w-[16%] rounded-full cursor-pointer">
             <BsPlusLg className="text-[#0E4E48] text-[26px]" />
           </div>
         </div>
@@ -63,9 +63,12 @@ const CreateOrder = () => {
           />
         </div>
         <div className="mt-10 flex items-center justify-end">
-          <div className="cursor-pointer  flex items-center justify-center bg-[#0E4E48] rounded-full p-3 text-[#fff] font-medium font-[Roboto] w-1/2">
+          <Link
+            to="/Customer/OrderDetails"
+            className="cursor-pointer  flex items-center justify-center bg-[#0E4E48] rounded-full p-3 text-[#fff] font-medium font-[Roboto] w-1/2"
+          >
             Preview Order
-          </div>
+          </Link>
         </div>
       </div>
     </div>

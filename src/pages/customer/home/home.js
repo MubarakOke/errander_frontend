@@ -24,7 +24,7 @@ const Index1 = () => {
       <div
         className={`${
           hamburger ? "blur-sm" : "blur-none"
-        } h-screen pt-[150px]  z-0 px-8`}
+        } h-screen pt-[150px]  z-0 px-6`}
       >
         <div>
           <div className="flex items-center justify-between w-full ">

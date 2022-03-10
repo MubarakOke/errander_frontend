@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../../../components/Navbar";
 import History from "./history";
 import Order from "./order";
-import Running from "./order";
+import Running from "./running";
 
 const Index1 = () => {
   const [hamburger, setHamburger] = React.useState(0);
@@ -24,7 +24,7 @@ const Index1 = () => {
       <div
         className={`${
           hamburger ? "blur-sm" : "blur-none"
-        } h-screen pt-[150px]  z-0 px-12`}
+        } h-screen pt-[150px]  z-0 px-8`}
       >
         <div>
           <div className="flex items-center justify-between w-full ">

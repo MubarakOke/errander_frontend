@@ -29,6 +29,11 @@ const CreateOrder = () => {
             type={"text"}
             className="outline-none mt-4 p-2 font-medium bg-[#F2F2F2] w-full rounded-[50px] text-[#8E8E8E]"
           />
+          <input
+            placeholder={"Price"}
+            type={"text"}
+            className="outline-none mt-4 p-2 font-medium bg-[#F2F2F2] w-full rounded-[50px] text-[#8E8E8E]"
+          />
         </div>
         <div className="flex justify-center items-center mt-4">
           <div className="p-4 bg-[#D7EBE2]  w-[16%] rounded-full cursor-pointer">
@@ -43,11 +48,10 @@ const CreateOrder = () => {
             className="outline-none  p-2 font-medium bg-[#F2F2F2] w-full rounded-[50px] text-[#8E8E8E]"
           />
           <textarea
-            rows="5"
+            rows="3"
+            defaultValue="Relevant details (optional)"
             className="w-full outline-none p-4 mt-4 rounded-[25px] text-[#8E8E8E] bg-[#F2F2F2] font-medium "
-          >
-            Relevant details (optional)
-          </textarea>
+          />
         </div>
 
         <div className="flex flex-col bg-[#fff] shadow-[1px_-2px_51px_-12px_rgba(0,0,0,0.25)] rounded-[30px] px-6 py-5 mt-4">

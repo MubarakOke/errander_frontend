@@ -10,12 +10,16 @@ const Profile = () => {
   return (
     <div>
       <Navbar
-        title="Home"
+        title="Profile"
         hamburger={hamburger}
         setHamburger={setHamburger}
         show="customer"
       />
-      <div className="px-8   h-screen pt-[150px]  z-0">
+      <div
+        className={`${
+          hamburger ? "blur-sm" : "blur-none"
+        } h-screen pt-[150px]  z-0 px-8`}
+      >
         <div className="flex justify-center items-center">
           <img src={Avatar} alt="Avatar" />
         </div>

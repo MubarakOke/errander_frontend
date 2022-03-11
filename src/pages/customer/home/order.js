@@ -16,6 +16,7 @@ const Order = () => {
         headingIconColor="white"
         headingColor="#62C78A"
         arrowVisible={1}
+        print={0}
         headingFrom="Tanke"
         headingTo="Asadam"
         calender="2020/03/27 - 09:00"
@@ -69,7 +70,7 @@ const Order = () => {
       />
 
       <div className="flex items-center justify-center">
-        <div className="rounded-full bg-[#D7EBE2]  p-5 mt-12 cursor-pointer flex items-center justify-center w-[18%]">
+        <div className="rounded-full bg-[#D7EBE2]  p-5 mt-12 mb-12 cursor-pointer flex items-center justify-center w-[18%]">
           <Link to="/Customer/CreateOrder">
             <BsPlusLg className="text-[26px] text-[#0E4E48]" />
           </Link>

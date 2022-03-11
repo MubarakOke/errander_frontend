@@ -24,6 +24,7 @@ const Modal = ({
   message,
   shopName,
   items,
+  print,
 }) => {
   return (
     <div>
@@ -136,6 +137,20 @@ const Modal = ({
               })}
             </div>
           </div>
+
+          {print ? (
+            <div>
+              <div className="border-b-[1px] border-[#595959] border-dotted mt-8"></div>
+              <div className="flex items-center justify-between mt-2">
+                <h1 className="text-[#4964D8] font-bold">Print receipt</h1>
+                <div className="shadow-[0px_1px_4px_rgba(0,0,0,0.25)] p-2 rounded-full">
+                  <BsArrowRight className="text-[26px] text-[#4964D8]" />
+                </div>
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
       {/* ====================Modal End============================= */}

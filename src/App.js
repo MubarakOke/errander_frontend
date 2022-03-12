@@ -9,6 +9,9 @@ import Profile from "./pages/customer/Profile/profile";
 import CustomerProfileEdit from "./pages/customer/Profile/CustomerProfileEdit";
 import CreateOrder from "./pages/customer/createOrder";
 import OrderDetails from "./pages/customer/orderDetails";
+import Order from "./pages/customer/home/order";
+import Running from "./pages/customer/home/running";
+import History from "./pages/customer/home/history";
 
 const App = () => {
   return (
@@ -17,7 +20,11 @@ const App = () => {
         <Route path="/" element={<Login />} />
         <Route path="/Customer/OrderDetails" element={<OrderDetails />} />
 
-        <Route path="/Customer/Home" element={<Home />} />
+        <Route path="/Customer/Home" element={<Home />}>
+          <Route path="/Customer/Home/Order" element={<Order />} />
+          <Route path="/Customer/Home/Running" element={<Running />} />
+          <Route path="/Customer/Home/History" element={<History />} />
+        </Route>
         <Route path="/Customer/Profile" element={<Profile />} />
         <Route path="/Customer/Blog" element={null} />
         <Route path="/Customer/zxcv" element={null} />

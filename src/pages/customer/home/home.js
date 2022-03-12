@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, Outlet } from "react-router-dom";
 import Navbar from "../../../components/Navbar";
 import History from "./history";
 import Order from "./order";
@@ -11,6 +12,8 @@ const Index1 = () => {
   const handleTab = (id) => {
     setActiveTab(id);
   };
+
+  const pathName = window.location.pathName;
   return (
     <div>
       <Navbar
@@ -28,10 +31,11 @@ const Index1 = () => {
       >
         <div>
           <div className="flex items-center justify-between w-full ">
-            <div
+            <Link
               onClick={() => {
                 handleTab(0);
               }}
+              to="/Customer/Home/Order"
               className={`${
                 activeTab === 0
                   ? "text-[#0E4E48] font-semibold border-b-2 border-[#0E4E48]"
@@ -39,8 +43,9 @@ const Index1 = () => {
               } cursor-pointer transition duration-300 font-[Roboto] font-bold text-[18px]`}
             >
               Order
-            </div>
-            <div
+            </Link>
+            <Link
+              to="/Customer/Home/Running"
               onClick={() => {
                 handleTab(1);
               }}
@@ -51,8 +56,9 @@ const Index1 = () => {
               } cursor-pointer transition duration-300 font-[Roboto] font-bold text-[18px]`}
             >
               Running
-            </div>
-            <div
+            </Link>
+            <Link
+              to="/Customer/Home/History"
               onClick={() => {
                 handleTab(2);
               }}
@@ -63,14 +69,12 @@ const Index1 = () => {
               } cursor-pointer transition duration-300 font-[Roboto] font-bold text-[18px]`}
             >
               History
-            </div>
+            </Link>
           </div>
         </div>
 
         <div className="font-[Roboto]">
-          {activeTab === 0 && <Order />}
-          {activeTab === 1 && <Running />}
-          {activeTab === 2 && <History />}
+          <Outlet />
         </div>
       </div>
     </div>

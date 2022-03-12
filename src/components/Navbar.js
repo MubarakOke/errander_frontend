@@ -97,7 +97,6 @@ const Navbar = ({ title, hamburger, setHamburger, show }) => {
         return (
           <Link
             to={item.link}
-            href={item.link}
             key={idx}
             className={` flex text-base font-medium my-3 hover:bg-[#0E4E48] hover:text-white  rounded-l-md hover:shadow-sm hover:shadow-[#000000] p-2 ${
               pathname.includes(item.link)
@@ -117,8 +116,7 @@ const Navbar = ({ title, hamburger, setHamburger, show }) => {
       return adminSidebarContent.map((item, idx) => {
         return (
           <Link
-            to=""
-            href={item.link}
+            to={item.link}
             key={idx}
             className={` flex text-base font-medium my-3 hover:bg-[#0E4E48] hover:text-white  rounded-l-md hover:shadow-sm hover:shadow-[#000000] p-2 ${
               pathname.includes(item.link)
@@ -138,8 +136,7 @@ const Navbar = ({ title, hamburger, setHamburger, show }) => {
       return erranderSidebarContent.map((item, idx) => {
         return (
           <Link
-            to=""
-            href={item.link}
+            to={item.link}
             key={idx}
             className={` flex text-base font-medium my-3 hover:bg-[#0E4E48] hover:text-white  rounded-l-md hover:shadow-sm hover:shadow-[#000000] p-2 ${
               pathname.includes(item.link)
@@ -176,9 +173,9 @@ const Navbar = ({ title, hamburger, setHamburger, show }) => {
     setHamburger(a);
   };
   const pathname = window.location.pathname;
- {
-//    ----------------------------Return begins----------------------------- 
- }
+  {
+    //    ----------------------------Return begins-----------------------------
+  }
   return (
     <div>
       {/* -----------------------------Header begins------------------------------ */}
@@ -193,7 +190,7 @@ const Navbar = ({ title, hamburger, setHamburger, show }) => {
           handleHamburger(0);
         }}
         ref={HeaderRef}
-        className={`w-full rounded-b-[41px] p-6 bg-[#D7EBE2] flex items-center justify-between fixed top-0 z-10 ${
+        className={`w-full rounded-b-[41px] p-6 bg-[#D7EBE2] flex items-center justify-between fixed top-0 z-10 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] ${
           hamburger ? "blur-sm" : "blur-none"
         }`}
       >

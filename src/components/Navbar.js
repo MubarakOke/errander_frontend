@@ -157,25 +157,28 @@ const Navbar = ({ title, hamburger, setHamburger, show }) => {
     }
   };
 
-  useEffect(() => {
-    document.body.addEventListener("click", (e) => {
-      if (HeaderRef.current.contains(e.target)) {
-        return;
-      }
+  const toggleNavbarBody=(e) => {
+    if (HeaderRef.current && HeaderRef.current.contains(e.target)) {
+      return;
+    }
+    handleHamburger(0);
+  };
 
-      handleHamburger(0);
-    });
+  useEffect(() => {
+    document.body.addEventListener("click", toggleNavbarBody)
+    
+    return () =>{
+      document.body.removeEventListener("click", toggleNavbarBody)
+    }
   }, []);
 
-  //   const [hamburger, setHamburger] = React.useState(0);
+
 
   const handleHamburger = (a) => {
     setHamburger(a);
   };
   const pathname = window.location.pathname;
-  {
-    //    ----------------------------Return begins-----------------------------
-  }
+  
   return (
     <div>
       {/* -----------------------------Header begins------------------------------ */}

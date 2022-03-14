@@ -4,6 +4,7 @@ import Navbar from "../../../components/Navbar";
 import History from "./history";
 import Order from "./order";
 import Running from "./running";
+import AddOrder from "../../../components/addOrder";
 
 const Index1 = () => {
   const [hamburger, setHamburger] = React.useState(0);
@@ -22,15 +23,17 @@ const Index1 = () => {
         setHamburger={setHamburger}
         show="customer"
       />
-      {/* --------------Router begins------------------ */}
-
+      {/* ---------------add order button---------------- */}
+      {activeTab==0&&<AddOrder/>}
+      {/* --------------Router begins------------------ */} 
       <div
         className={`${
           hamburger ? "blur-sm" : "blur-none"
         } h-screen pt-[150px]  z-0 px-6`}
       >
-        <div>
-          <div className="flex items-center justify-between w-full ">
+        {/*------------------top nav begins---------------- */}
+        <div className="w-[70%] mx-auto ">
+          <div className="flex items-center justify-between w-full">
             <Link
               onClick={() => {
                 handleTab(0);
@@ -72,7 +75,7 @@ const Index1 = () => {
             </Link>
           </div>
         </div>
-
+        {/* ----------------page menu switching---------------- */}
         <div className="font-[Roboto]">
           <Outlet />
         </div>

@@ -29,7 +29,8 @@ const Modal = ({
   return (
     <div>
       {/* ====================Modal Start============================= */}
-      <div className="mt-5 rounded-[30px] shadow-[0px_4px_190px_14px_rgba(0,0,0,0.25)]">
+      <div className="mt-5 rounded-[30px] shadow-[1px_-2px_51px_-12px_rgba(0,0,0,0.25)]">
+      {/* ---------------------title---------------------------- */}
         <div className="flex justify-between bg-[#fff] mt-4 rounded-t-[30px]">
           <div className="flex flex-row p-5 font-bold text-[#616262]">
             Order {orderId}
@@ -50,6 +51,7 @@ const Modal = ({
             </div>
           </div>
         </div>
+        {/* ----------------------------direction--------------------  */}
         <div className="flex flex-col bg-[#fff] px-5 py-5 rounded-b-[30px]">
           <div className="flex justify-between py-4 px-6 font-medium bg-[#F2F2F2] w-full rounded-[50px] text-[#2c2c2c]">
             <span>{headingFrom}</span>{" "}

@@ -190,7 +190,7 @@ const Navbar = ({ title, hamburger, setHamburger, show }) => {
           handleHamburger(0);
         }}
         ref={HeaderRef}
-        className={`w-full rounded-b-[41px] p-6 bg-[#D7EBE2] flex items-center justify-between fixed top-0 z-10 shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)] ${
+        className={`w-full rounded-b-[41px] p-6 bg-[#D7EBE2] flex items-center justify-between fixed top-0 z-10 shadow-[0_4px_4px_0px_rgba(0,0,0,0.25)]  ${
           hamburger ? "blur-sm" : "blur-none"
         }`}
       >

@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
-import { IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowUp  } from "react-icons/io";
 import {
   BsCalendar2DayFill,
   BsFillChatSquareTextFill,
@@ -26,19 +26,29 @@ const Modal = ({
   items,
   print,
 }) => {
+
+  const [dropdown, setDropdown]= useState(false)
+
+
   return (
     <div>
       {/* ====================Modal Start============================= */}
-      <div className="mt-5 rounded-[30px] shadow-[1px_-2px_51px_-12px_rgba(0,0,0,0.25)]">
-      {/* ---------------------title---------------------------- */}
-        <div className="flex justify-between bg-[#fff] mt-4 rounded-t-[30px]">
+      <div className="mt-5 pb-5 rounded-[30px] shadow-[1px_-2px_51px_-12px_rgba(0,0,0,0.25)]">
+      {/* ---------------------Modal Header  Start---------------------------- */}
+      <div>
+        {/* ----------------------------Title--------------------  */}
+        <div className="flex justify-between bg-[#fff]  rounded-t-[30px]">
           <div className="flex flex-row p-5 font-bold text-[#616262]">
             Order {orderId}
           </div>
-          <div className="flex flex-row p-5">
-            <IoIosArrowDown className="text-[24px]" />
-          </div>
-
+          {dropdown?
+          (<div className="flex flex-row p-5">
+          <IoIosArrowUp className="text-[24px]"onClick={()=>setDropdown(false)} />
+          </div>):(
+          <div className="flex flex-row p-5" >
+            <IoIosArrowDown className="text-[24px]" onClick={()=>setDropdown(true)}/>
+          </div>)
+          }
           <div
             className={`flex items-center justify-center bg-[${headingColor}] w-2/5 p-5 rounded-tr-[30px] rounded-bl-[15px]`}
           >
@@ -51,14 +61,19 @@ const Modal = ({
             </div>
           </div>
         </div>
-        {/* ----------------------------direction--------------------  */}
-        <div className="flex flex-col bg-[#fff] px-5 py-5 rounded-b-[30px]">
-          <div className="flex justify-between py-4 px-6 font-medium bg-[#F2F2F2] w-full rounded-[50px] text-[#2c2c2c]">
-            <span>{headingFrom}</span>{" "}
-            {arrowVisible ? <BsArrowRight className="text-[24px]" /> : ""}{" "}
-            <span>{headingTo}</span>
+          {/* ----------------------------Direction--------------------  */}
+          <div className="flex flex-col bg-[#fff] px-5 rounded-b-[30px]">
+            <div className="flex justify-between py-4 px-6 font-medium bg-[#F2F2F2] w-full rounded-[50px] text-[#2c2c2c]">
+              <span>{headingFrom}</span>{" "}
+              {arrowVisible ? <BsArrowRight className="text-[24px]" /> : ""}{" "}
+              <span>{headingTo}</span>
+            </div>
           </div>
-
+        </div>
+        {/* ---------------------Modal Header End---------------------------- */}
+        {/* ----------------------------Modal Body Start--------------------  */}
+        <div className={`flex flex-col bg-[#fff] px-5 ${dropdown? '':'hidden'} rounded-b-[30px]`}>
+          {/* ----------------------------content--------------------  */}
           <div className="mt-4 grid grid-cols-4 gap-3">
             <div className="flex flex-col items-start col-span-2">
               {calender ? (
@@ -139,7 +154,7 @@ const Modal = ({
               })}
             </div>
           </div>
-
+          {/* ----------------------------content end--------------------  */}
           {print ? (
             <div>
               <div className="border-b-[1px] border-[#595959] border-dotted mt-8"></div>
@@ -154,6 +169,7 @@ const Modal = ({
             ""
           )}
         </div>
+        {/* ----------------------------Modal Body end--------------------  */}
       </div>
       {/* ====================Modal End============================= */}
     </div>

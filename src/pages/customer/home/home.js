@@ -1,10 +1,7 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
 import Navbar from "../../../components/Navbar";
-import History from "./history";
-import Order from "./order";
-import Running from "./running";
-import AddOrder from "../../../components/addOrder";
+import AddOrderButton from "../../../components/customer/addOrderButton";
 
 const Index1 = () => {
   const [hamburger, setHamburger] = React.useState(0);
@@ -14,7 +11,7 @@ const Index1 = () => {
     setActiveTab(id);
   };
 
-  const pathName = window.location.pathName;
+
   return (
     <div>
       <Navbar
@@ -24,7 +21,7 @@ const Index1 = () => {
         show="customer"
       />
       {/* ---------------add order button---------------- */}
-      {activeTab==0&&<AddOrder/>}
+      {activeTab===0&&<AddOrderButton/>}
       {/* --------------Router begins------------------ */} 
       <div
         className={`${

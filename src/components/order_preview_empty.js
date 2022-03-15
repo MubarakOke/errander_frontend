@@ -1,7 +1,5 @@
 import React from "react";
-import { BsPlusLg } from "react-icons/bs";
 import Wall from "../Assets/image/wall.png";
-import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 const OrderPreviewEmpty = () => {
@@ -17,5 +15,6 @@ const OrderPreviewEmpty = () => {
     </div>
   );
 };
+
 
 export default OrderPreviewEmpty;

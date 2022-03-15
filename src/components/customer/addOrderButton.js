@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import { BsPlusLg } from "react-icons/bs";
 
-const AddOrder= () => {
+const AddOrderButton= () => {
 
   return (
     <div className="flex items-center justify-center">
@@ -15,4 +15,4 @@ const AddOrder= () => {
   )
 }
 
-export default AddOrder
+export default AddOrderButton

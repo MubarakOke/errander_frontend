@@ -32,7 +32,7 @@ const Index1 = () => {
         } h-screen pt-[150px]  z-0 px-6`}
       >
         {/*------------------top nav begins---------------- */}
-        <div className="w-[70%] mx-auto ">
+        <div className="w-[80%] mx-auto ">
           <div className="flex items-center justify-between w-full">
             <Link
               onClick={() => {

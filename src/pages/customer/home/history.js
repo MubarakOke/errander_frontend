@@ -5,7 +5,7 @@ import { ImCancelCircle } from "react-icons/im";
 
 const History = () => {
   return (
-    <div>
+    <div className="pb-12">
       <Modal
         orderId="#30528"
         heading="Completed"

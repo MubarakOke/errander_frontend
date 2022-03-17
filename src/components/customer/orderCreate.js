@@ -13,6 +13,7 @@ const orderCreate= ({stockcount, setStockcount, fields, setFields, setPage})=> {
     return stockList;
   }
 
+ 
   return (
     <div>
         {/* -------------------Stock Information Start----------------- */}

@@ -12,7 +12,7 @@ import { MdOutlineArrowBackIosNew } from "react-icons/md";
 
 const orderPreview = ({fields, setPage}) => {
    const date= Date()
-
+console.log(date)
     const RenderStockLists= ()=>{
         return Object.values(fields.stocks).map((stock, index)=>{
            return (

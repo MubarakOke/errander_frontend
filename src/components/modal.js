@@ -50,7 +50,7 @@ const Modal = ({
           </div>)
           }
           <div
-            className={`flex items-center justify-center bg-[${headingColor}] w-2/5 p-5 rounded-tr-[30px] rounded-bl-[15px]`}
+            className={`flex items-center justify-center bg-[blue] w-2/5 p-5 rounded-tr-[30px] rounded-bl-[15px]`}
           >
             <span className="text-[15px] font-bold text-[white]">
               {heading}

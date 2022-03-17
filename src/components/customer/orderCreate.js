@@ -1,15 +1,20 @@
-import React from 'react'
+import React from 'react';
 import { BsPlusLg } from "react-icons/bs";
-import StockForm from "../../components/customer/stockForm"
+import StockForm from "../../components/customer/stockForm";
 
 
-const orderCreate= ({stockcount, setStockcount, fields, setFields, setPage})=> {
+const OrderCreate= ({stockcount, setStockcount, fields, setFields, setContent})=> {
+  
 
-  const StockForms=()=>{
+  const StockForms=(index)=>{
     const stockList=[]
-    for(let i=0; i<=stockcount; i++ ){
-      stockList.push(<StockForm key={i} fields={fields} setFields={setFields} i={i}/>)
+    if(index){
+      stockList.splice(index, 1)
     }
+    for(let i=0; i<=stockcount.count; i++ ){
+      stockList.push(<StockForm key={i} stockcount={stockcount} setStockcount={setStockcount} setFields={setFields} fields={fields}  i={i}/>)
+    }
+    
     return stockList;
   }
 
@@ -18,13 +23,13 @@ const orderCreate= ({stockcount, setStockcount, fields, setFields, setPage})=> {
     <div>
         {/* -------------------Stock Information Start----------------- */}
         {
-         StockForms()
+         StockForms(stockcount.index)
         }
         {/* -------------------Stock Information End----------------- */}
         {/* -------------------Add More Stock Button Start----------------- */}
         <div className="flex justify-center items-center mt-4">
           <div className="p-4 bg-[#D7EBE2]  w-[16%] rounded-full cursor-pointer">
-            <BsPlusLg onClick={()=>{setStockcount(stockcount+1)}} className="text-[#0E4E48] text-[26px]" />
+            <BsPlusLg onClick={()=>{setStockcount({...stockcount, count: stockcount.count+1})}} className="text-[#0E4E48] text-[26px]" />
           </div>
         </div>
         {/* -------------------Add More Stock Button End----------------- */}
@@ -33,7 +38,7 @@ const orderCreate= ({stockcount, setStockcount, fields, setFields, setPage})=> {
           <input
             placeholder={"Address to deliver to"}
             type={"text"}
-            value={fields.relevant.address}
+            value={fields.relevant.address||""}
             className="outline-none  p-2 font-medium bg-[#F2F2F2] w-full rounded-[50px] text-[#8E8E8E]"
             onChange={(e)=>setFields({...fields, relevant:{...fields.relevant, address:e.target.value}})}
           />
@@ -41,7 +46,7 @@ const orderCreate= ({stockcount, setStockcount, fields, setFields, setPage})=> {
             rows="3"
             placeholder="Relevant details (optional)"
             className="w-full outline-none p-4 mt-4 rounded-[25px] text-[#8E8E8E] bg-[#F2F2F2] font-medium"
-            value={fields.relevant.message}
+            value={fields.relevant.message||""}
             onChange={(e)=>setFields({...fields, relevant:{...fields.relevant, message:e.target.value}})}
           />
         </div>
@@ -52,14 +57,14 @@ const orderCreate= ({stockcount, setStockcount, fields, setFields, setPage})=> {
             placeholder={"Prefered Shop Name (Optional)"}
             type={"text"}
             className="outline-none  p-2 font-medium bg-[#F2F2F2] w-full rounded-[50px] text-[#8E8E8E]"
-            value={fields.preferred.shopName}
+            value={fields.preferred.shopName||""}
             onChange={(e)=>setFields({...fields, preferred:{...fields.preferred, shopName:e.target.value}})}
           />
           <input
             placeholder={"Preferred Shop Location (Optional)"}
             type={"text"}
             className="outline-none mt-4 p-2 font-medium bg-[#F2F2F2] w-full rounded-[50px] text-[#8E8E8E]"
-            value={fields.preferred.shopLocation}
+            value={fields.preferred.shopLocation||""}
             onChange={(e)=>setFields({...fields, preferred:{...fields.preferred, shopLocation:e.target.value}})}
           />
         </div>
@@ -67,7 +72,7 @@ const orderCreate= ({stockcount, setStockcount, fields, setFields, setPage})=> {
         {/* -------------------Location Information Start----------------- */}
         {/* -------------------Preview Order Button Start----------------- */}
         <div className="mt-10 flex items-center justify-end">
-            <button onClick={()=>setPage(1)} className="cursor-pointer  flex items-center justify-center bg-[#0E4E48] rounded-full p-3 text-[#fff] font-medium font-[Roboto] w-1/2"> 
+            <button onClick={()=>setContent(1)} className="cursor-pointer  flex items-center justify-center bg-[#0E4E48] rounded-full p-3 text-[#fff] font-medium font-[Roboto] w-1/2"> 
             Preview Order
             </button>
         </div>
@@ -76,4 +81,4 @@ const orderCreate= ({stockcount, setStockcount, fields, setFields, setPage})=> {
   )
 }
 
-export default orderCreate;
+export default OrderCreate;

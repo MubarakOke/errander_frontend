@@ -24,24 +24,37 @@ const SignUp = () => {
       </div>
       <div className="flex flex-col">
         <input
+          placeholder={"First Name"}
+          type={"text"}
+          className="outline-none border-b-2 p-2 mt-6"
+        />
+        <input
+          placeholder={"Last Name"}
+          type={"text"}
+          className="outline-none border-b-2 p-2 mt-6"
+        />
+        <input
           placeholder={"Email"}
           type={"email"}
-          className="outline-none mt-24 border-b-2 p-2"
-        />
-
-        <input
-          placeholder={"Full Name"}
-          type={"text"}
-          className="outline-none border-b-2 p-2 mt-10 "
+          className="outline-none mt-6 border-b-2 p-2"
         />
         <input
           placeholder={"Phone Number"}
-          type={"text"}
-          className="outline-none border-b-2 p-2 mt-10 "
-        />
-        
+          type={"phone"}
+          className="outline-none border-b-2 p-2 mt-6 "
+        /> 
+        <input
+          placeholder={"Password"}
+          type={"password"}
+          className="outline-none border-b-2 p-2 mt-6 "
+        /> 
+        <input
+          placeholder={"Confirm password"}
+          type={"password"}
+          className="outline-none border-b-2 p-2 mt-6 "
+        />       
       </div>
-      <div className="cursor-pointer mt-16 flex items-center justify-center bg-[#0E4E48] rounded-full p-3 text-[#fff] font-">
+      <div className="cursor-pointer mt-11 flex items-center justify-center bg-[#0E4E48] rounded-full p-3 text-[#fff] font-">
         Submit
       </div>
     </div>

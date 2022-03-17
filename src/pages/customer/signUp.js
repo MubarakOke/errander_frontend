@@ -40,7 +40,7 @@ const SignUp = () => {
         />
         <input
           placeholder={"Phone Number"}
-          type={"text"}
+          type={"phone"}
           className="outline-none border-b-2 p-2 mt-6 "
         /> 
         <input

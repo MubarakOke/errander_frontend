@@ -10,7 +10,7 @@ import { MdOutlineArrowBackIosNew } from "react-icons/md";
 // import { useNavigate } from "react-router-dom";
 
 
-const orderPreview = ({fields, setPage}) => {
+const orderPreview = ({fields, setContent}) => {
    const date= Date()
 
     const RenderStockLists= ()=>{
@@ -30,7 +30,7 @@ const orderPreview = ({fields, setPage}) => {
       {/* ------------------Back Button Starts-------------- */}
         <div>
           <div
-            onClick={() => setPage(0)}
+            onClick={() => setContent(0)}
             className="p-4 bg-[#D7EBE2]  w-[16%] rounded-full cursor-pointer shadow-[0_35px_60px_-15px_rgba(0,0,0,0.3)]"
           >
             <MdOutlineArrowBackIosNew className="text-[#0E4E48] text-[26px]" />

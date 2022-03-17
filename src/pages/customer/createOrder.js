@@ -6,21 +6,21 @@ import OrderPreview from "../../components/customer/orderPreview";
 
 const CreateOrder = () => {
   const [hamburger, setHamburger] = useState(0);
-  const [stockcount, setStockcount] = useState(0)
-  const [page, setPage]= useState(0)
+  const [content, setContent]= useState(0)
+  const [stockcount, setStockcount] = useState({count:0, index:0});
   const [fields, setFields]= useState({
-                                      'stocks': {},
-                                      'relevant': {},
-                                      'preferred':{},
+                                      stocks: {},
+                                      relevant: {},
+                                      preferred:{},
                                       })
   
 
-  const RenderStep=()=>{
-    switch (page){
+  const RenderContent=()=>{
+    switch (content){
       case 0:
-        return <OrderCreate stockcount={stockcount} setStockcount={setStockcount} fields={fields} setFields={setFields} setPage={setPage}/>;
+        return <OrderCreate stockcount={stockcount} setStockcount={setStockcount} fields={fields} setFields={setFields} setContent={setContent}/>;
       case 1:
-        return <OrderPreview fields={fields} setPage={setPage}/>;
+        return <OrderPreview fields={fields} setContent={setContent}/>;
       default:
         return;
     }
@@ -30,16 +30,16 @@ const CreateOrder = () => {
     <div>
       {/* ---------------Navbar Starts--------------- */}
       <Navbar
-        title="Create Order"
+        title={content===0?"Create Order":"Preview Order"}
         hamburger={hamburger}
         setHamburger={setHamburger}
         show="customer"
       />
       {/* ---------------Navbar Ends--------------- */}
       <div className={`${hamburger ? "blur-sm" : "blur-none"} h-screen pt-[150px]  z-0 px-6`}>
-      {/* ---------------Page Rendering Starts--------------- */}
-        {RenderStep()}
-      {/* ---------------Page Rendering Ends--------------- */}
+      {/* ---------------Content Rendering Starts--------------- */}
+        {RenderContent()}
+      {/* ---------------Content Rendering Ends--------------- */}
       </div>
     </div>
   );

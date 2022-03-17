@@ -54,7 +54,7 @@ const SignUp = () => {
           className="outline-none border-b-2 p-2 mt-6 "
         />       
       </div>
-      <div className="cursor-pointer mt-16 flex items-center justify-center bg-[#0E4E48] rounded-full p-3 text-[#fff] font-">
+      <div className="cursor-pointer mt-11 flex items-center justify-center bg-[#0E4E48] rounded-full p-3 text-[#fff] font-">
         Submit
       </div>
     </div>

@@ -12,10 +12,25 @@ import OrderDetails from "./pages/customer/orderDetails";
 import Order from "./pages/customer/home/order";
 import Running from "./pages/customer/home/running";
 import History from "./pages/customer/home/history";
+import {toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+// toast.configure()
 
 const App = () => {
   return (
     <div>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        style={{ }}
+        />
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/Customer/OrderDetails" element={<OrderDetails />} />

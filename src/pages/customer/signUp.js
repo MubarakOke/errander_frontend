@@ -3,7 +3,7 @@ import Logo from "../../Assets/svg/Logo.svg";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { SignupAction } from "../../Redux/actionCreators/customers/customerActions";
+import { CustomerSignupAction } from "../../Redux/actionCreators/customers/customerActions";
 
 const SignUp = () => {
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ const SignUp = () => {
     try {
       await axios
         .post("https://errander.herokuapp.com/api/customer/", formData)
-        .then((res) => dispatch(SignupAction(res))).then(res=>console.log(res));
+        .then((res) => dispatch(CustomerSignupAction(res))).then(res=>console.log(res));
     } catch (error) {
       console.log(error)
     }

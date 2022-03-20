@@ -15,9 +15,14 @@ const INITIAL_STATE = {
     "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ 3NjA0NjA1LCJpYXQiOjE2NDc1MTgyMDUsImp0aSI6ImJjOTQ2ZWRkMGVmYzRhOGE5ZDYyY2I0YmRiMDQ0NzE4IiwidXNlcl9pZCI6ImJsaW5rczQ0NEBnbWFpbC5jb20ifQ.mcAJCIM5KFFH6jbsWBC_NsKfVuoV5xFYtyUNYftM4Xw",
 };
 
-const signinReducer = (state = INITIAL_STATE, action) => {
+const CustomerSignupReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case type.signupType:
+      return {
+        ...state,
+        ...action.payload,
+      };
+    case type.signinType:
       return {
         ...state,
         ...action.payload,
@@ -28,4 +33,4 @@ const signinReducer = (state = INITIAL_STATE, action) => {
   }
 };
 
-export default signinReducer;
+export default CustomerSignupReducer;

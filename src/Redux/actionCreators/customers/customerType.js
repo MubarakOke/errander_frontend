@@ -1,1 +1,2 @@
-export const signupType = "SIGNUPTYPE";
+export const signupType = "CUSTOMERSIGNUPTYPE";
+export const signinType = "CUSTOMERSIGNINTYPE";

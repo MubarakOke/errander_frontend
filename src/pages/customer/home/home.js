@@ -3,6 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 import Navbar from "../../../components/Navbar";
 import AddOrderButton from "../../../components/customer/addOrderButton";
 
+
 const Index1 = () => {
   const [hamburger, setHamburger] = React.useState(0);
   const [activeTab, setActiveTab] = React.useState(0);

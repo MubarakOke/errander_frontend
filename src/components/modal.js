@@ -37,15 +37,15 @@ const Modal = ({
       {/* ---------------------Modal Header  Start---------------------------- */}
       <div>
         {/* ----------------------------Title--------------------  */}
-        <div className="flex justify-between bg-[#fff]  rounded-t-[30px]">
-          <div className="flex flex-row p-5 font-bold text-[#616262]">
+        <div className="flex justify-between bg-[#fff] mb-3 rounded-t-[30px]">
+          <div className="flex flex-row p-4 font-bold text-[#616262]">
             Order {orderId}
           </div>
           {dropdown?
-          (<div className="flex flex-row p-5">
+          (<div className="flex flex-row p-4">
           <IoIosArrowUp className="text-[24px]"onClick={()=>setDropdown(false)} />
           </div>):(
-          <div className="flex flex-row p-5" >
+          <div className="flex flex-row p-4" >
             <IoIosArrowDown className="text-[24px]" onClick={()=>setDropdown(true)}/>
           </div>)
           }

@@ -1,6 +1,8 @@
-import * as type from "./customerType";
+import * as type from "./signinTypes";
 
-export const SignInAction = (a) => ({
+export const SignInAction = (a) => (
+  {
   type: type.signinType,
   payload: a,
 });
+ 

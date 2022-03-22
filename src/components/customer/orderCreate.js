@@ -72,7 +72,7 @@ const OrderCreate= ({stockcount, setStockcount, fields, setFields, setContent})=
         {/* -------------------Location Information Start----------------- */}
         {/* -------------------Preview Order Button Start----------------- */}
         <div className="mt-10 flex items-center justify-end">
-            <button onClick={()=>setContent(1)} className="cursor-pointer  flex items-center justify-center bg-[#0E4E48] rounded-full p-3 text-[#fff] font-medium font-[Roboto] w-1/2"> 
+            <button onClick={()=>setContent(1)} className="mb-5 cursor-pointer  flex items-center justify-center bg-[#0E4E48] rounded-full p-3 text-[#fff] font-medium font-[Roboto] w-1/2"> 
             Preview Order
             </button>
         </div>

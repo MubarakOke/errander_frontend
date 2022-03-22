@@ -21,24 +21,24 @@ const history = <AiOutlineHistory />;
 
 const customerSidebarContent = [
   {
-    link: "/Customer/Home",
+    link: "/customer/home/order",
     icon: home,
     title: "Home",
   },
   {
-    link: "/Customer/Profile",
+    link: "/customer/profile",
     icon: profile,
     title: "Profile",
   },
 
   {
-    link: "/Customer/Blog",
+    link: "/customer/blog",
     icon: blog,
     title: "Blog",
   },
 
   {
-    link: "/Customer/Logout",
+    link: "/customer/logout",
     icon: logout,
     title: "Logout",
   },
@@ -46,24 +46,24 @@ const customerSidebarContent = [
 
 const adminSidebarContent = [
   {
-    link: "/Customer/Home",
+    link: "/customer/home",
     icon: dashboard,
     title: "Dashboard",
   },
   {
-    link: "/Customer/Profile",
+    link: "/customer/profile",
     icon: monitor,
     title: "Monitor",
   },
 
   {
-    link: "/Customer/Blog",
+    link: "/customer/blog",
     icon: history,
     title: "History",
   },
 
   {
-    link: "/Customer/Logout",
+    link: "/customer/logout",
     icon: logout,
     title: "Logout",
   },
@@ -71,18 +71,18 @@ const adminSidebarContent = [
 
 const erranderSidebarContent = [
   {
-    link: "/Customer/Home",
+    link: "/customer/home",
     icon: home,
     title: "Home",
   },
   {
-    link: "/Customer/Profile",
+    link: "/customer/profile",
     icon: profile,
     title: "Profile",
   },
 
   {
-    link: "/Customer/Logout",
+    link: "/customer/logout",
     icon: logout,
     title: "Logout",
   },
@@ -98,7 +98,7 @@ const Navbar = ({ title, hamburger, setHamburger, show }) => {
           <Link
             to={item.link}
             key={idx}
-            className={` flex text-base font-medium my-3 hover:bg-[#0E4E48] hover:text-white  rounded-l-md hover:shadow-sm hover:shadow-[#000000] p-2 ${
+            className={` flex text-base font-medium my-3 hover:bg-[] hover:text-white  rounded-l-md hover:shadow-sm hover:shadow-[#000000] p-2 ${
               pathname.includes(item.link)
                 ? "bg-[#0E4E48] text-white "
                 : "text-gray-500"

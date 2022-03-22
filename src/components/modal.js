@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { IoIosArrowDown, IoIosArrowUp  } from "react-icons/io";
 import {
   BsCalendar2DayFill,
@@ -8,6 +7,11 @@ import {
 } from "react-icons/bs";
 import { AiFillPhone, AiTwotoneShop } from "react-icons/ai";
 import { FaTruck } from "react-icons/fa";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
+import { ImCancelCircle } from "react-icons/im";
+import { useDispatch } from "react-redux";
+import { DeleteOrderAction } from "../Redux/actionCreators/order/orderAction";
+
 
 const Modal = ({
   orderId,
@@ -21,6 +25,7 @@ const Modal = ({
   calender,
   phone,
   rider,
+  status,
   message,
   shopName,
   items,
@@ -28,38 +33,60 @@ const Modal = ({
 }) => {
 
   const [dropdown, setDropdown]= useState(false)
+  const dispatch= useDispatch()
+  
+  const deleteOrder= ()=>{
+    dispatch(DeleteOrderAction(orderId))
+  }
+
+  const renderStatus= ()=>{
+    if(status==='running'){
+      return (
+        <div className={`flex items-center justify-center bg-[#62C78A] w-2/5 p-5 rounded-tr-[30px] rounded-bl-[15px]`}>
+            <span className="text-[15px] font-bold text-[white]">
+              Running
+            </span>
+            <div className="ml-2 text-[20px] text-[white]">
+              <MdOutlineRemoveRedEye size="25px"/>
+            </div>
+          </div>
+        );
+      }
+    if(status==='initiated'){
+        return (
+          <div className={`flex items-center justify-center bg-[#FDBC3F] w-2/5 p-5 rounded-tr-[30px] rounded-bl-[15px]`}>
+            <span className="text-[15px] font-bold text-[white]">
+              Initiated
+            </span>
+            <div className="ml-2 text-[20px] text-[red]">
+              <ImCancelCircle onClick={()=>{deleteOrder()}} size="25px"/>
+            </div>
+          </div>
+        );
+      }
+    }
 
 
   return (
     <div>
       {/* ====================Modal Start============================= */}
-      <div className="mt-5 pb-5 rounded-[30px] shadow-[1px_-2px_51px_-12px_rgba(0,0,0,0.25)]">
+      <div className="mt-5 pb-5 rounded-[30px] z-30 shadow-[1px_-2px_51px_-12px_rgba(0,0,0,0.25)]">
       {/* ---------------------Modal Header  Start---------------------------- */}
       <div>
         {/* ----------------------------Title--------------------  */}
-        <div className="flex justify-between bg-[#fff] mb-3 rounded-t-[30px]">
-          <div className="flex flex-row p-4 font-bold text-[#616262]">
+        <div className="flex justify-between bg-[#fff] mb-3  rounded-t-[30px]">
+          <div className="flex flex-row p-5 font-bold text-[#616262]">
             Order {orderId}
           </div>
           {dropdown?
-          (<div className="flex flex-row p-4">
+          (<div className="flex flex-row p-5">
           <IoIosArrowUp className="text-[24px]"onClick={()=>setDropdown(false)} />
           </div>):(
-          <div className="flex flex-row p-4" >
+          <div className="flex flex-row p-5" >
             <IoIosArrowDown className="text-[24px]" onClick={()=>setDropdown(true)}/>
           </div>)
           }
-          <div
-            className={`flex items-center justify-center bg-[blue] w-2/5 p-5 rounded-tr-[30px] rounded-bl-[15px]`}
-          >
-            <span className="text-[15px] font-bold text-[white]">
-              {heading}
-            </span>
-
-            <div className={`ml-2 text-[20px] text-[${headingIconColor}]`}>
-              {headingIcon}
-            </div>
-          </div>
+          {renderStatus()}
         </div>
           {/* ----------------------------Direction--------------------  */}
           <div className="flex flex-col bg-[#fff] px-5 rounded-b-[30px]">

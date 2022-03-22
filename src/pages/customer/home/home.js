@@ -1,17 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import Navbar from "../../../components/Navbar";
 import AddOrderButton from "../../../components/customer/addOrderButton";
+import { FetchOrderAction } from "../../../Redux/actionCreators/order/orderAction";
+
 
 
 const Index1 = () => {
   const [hamburger, setHamburger] = React.useState(0);
-  const [activeTab, setActiveTab] = React.useState(0);
+  const [activeTab, setActiveTab] = React.useState();
+  const dispatch= useDispatch();
+  const pathname = window.location.pathname;
 
-  const handleTab = (id) => {
-    setActiveTab(id);
-  };
 
+  useEffect(()=>{
+    dispatch(FetchOrderAction())
+  }, []);
+
+  const showAddOrderButton= ()=>{
+    if(pathname.includes("customer/home/order")||activeTab===0){
+      return <AddOrderButton/>
+    }
+    else{
+      return
+    }
+  }
 
   return (
     <div>
@@ -21,9 +35,10 @@ const Index1 = () => {
         setHamburger={setHamburger}
         show="customer"
       />
-      {/* ---------------add order button---------------- */}
-      {activeTab===0&&<AddOrderButton/>}
-      {/* --------------Router begins------------------ */} 
+      {/* ---------------Add Order Button Starts-------------- */}
+      {showAddOrderButton()}
+      {/* ---------------Add Order Button Ends-------------- */}
+      {/* --------------Navigation begins------------------ */} 
       <div
         className={`${
           hamburger ? "blur-sm" : "blur-none"
@@ -33,12 +48,10 @@ const Index1 = () => {
         <div className="w-[80%] mx-auto ">
           <div className="flex items-center justify-between w-full">
             <Link
-              onClick={() => {
-                handleTab(0);
-              }}
-              to="/Customer/Home/Order"
+              onClick={()=>{setActiveTab(0)}}
+              to="/customer/home/order"
               className={`${
-                activeTab === 0
+                pathname.includes("customer/home/order")
                   ? "text-[#0E4E48] font-semibold border-b-2 border-[#0E4E48]"
                   : "text-[#999A9A]"
               } cursor-pointer transition duration-300 font-[Roboto] font-bold text-[18px]`}
@@ -46,12 +59,10 @@ const Index1 = () => {
               Order
             </Link>
             <Link
-              to="/Customer/Home/Running"
-              onClick={() => {
-                handleTab(1);
-              }}
+              to="/customer/home/running"
+              onClick={()=>{setActiveTab(1)}}
               className={`${
-                activeTab === 1
+                pathname.includes("customer/home/running")
                   ? "text-[#0E4E48] font-semibold border-b-2 border-[#0E4E48]"
                   : "text-[#999A9A]"
               } cursor-pointer transition duration-300 font-[Roboto] font-bold text-[18px]`}
@@ -59,12 +70,10 @@ const Index1 = () => {
               Running
             </Link>
             <Link
-              to="/Customer/Home/History"
-              onClick={() => {
-                handleTab(2);
-              }}
+              to="/customer/home/history"
+              onClick={()=>{setActiveTab(2)}}
               className={`${
-                activeTab === 2
+                pathname.includes("customer/home/history")
                   ? "text-[#0E4E48] font-semibold border-b-2 border-[#0E4E48]"
                   : "text-[#999A9A]"
               } cursor-pointer transition duration-300 font-[Roboto] font-bold text-[18px]`}

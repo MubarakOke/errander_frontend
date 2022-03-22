@@ -12,45 +12,48 @@ import OrderDetails from "./pages/customer/orderDetails";
 import Order from "./pages/customer/home/order";
 import Running from "./pages/customer/home/running";
 import History from "./pages/customer/home/history";
-import {toast, ToastContainer} from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { Toaster } from 'react-hot-toast';
+// import {toast, ToastContainer} from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 // toast.configure()
+
+
+
 
 const App = () => {
   return (
     <div>
-      <ToastContainer
-        position="bottom-center"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        style={{ }}
-        />
+      {/* ----------------Notification Begins------------- */}
+      <div>
+        <Toaster 
+        toastOptions={{success: {duration: 5000, position: 'top-center', style: {background: '#0E4E48', color: 'white'}},
+                       error: {duration: 5000, position: 'top-center', style: {background: 'red', color: 'white'}}
+                     }}               
+        containerStyle={{top: 50}} />
+      </div>
+      {/* ----------------Notification Ends------------- */}
+      {/* -----------Routes Begins--------------- */}
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/Customer/OrderDetails" element={<OrderDetails />} />
+        <Route path="/customer/orderdetails" element={<OrderDetails />} />
 
-        <Route path="/Customer/Home" element={<Home />}>
+        <Route path="/customer/home" element={<Home />}>
           <Route index element={<Order />} />
-          <Route path="/Customer/Home/Order" element={<Order />} />
-          <Route path="/Customer/Home/Running" element={<Running />} />
-          <Route path="/Customer/Home/History" element={<History />} />
+          <Route path="/customer/home/order" element={<Order />} />
+          <Route path="/customer/home/running" element={<Running />} />
+          <Route path="/customer/home/history" element={<History />} />
         </Route>
-        <Route path="/Customer/Profile" element={<Profile />} />
-        <Route path="/Customer/Blog" element={null} />
-        <Route path="/Customer/zxcv" element={null} />
-        <Route path="/Customer/CreateOrder" element={<CreateOrder />} />
+        <Route path="/customer/profile" element={<Profile />} />
+        <Route path="/customer/blog" element={null} />
+        <Route path="/customer/zxcv" element={null} />
+        <Route path="/customer/createorder" element={<CreateOrder />} />
 
-        <Route path="/Errander" element={<Errander />} />
-        <Route path="/Admin" element={<Admin />} />
-        <Route path="/CustomerProfileEdit" element={<CustomerProfileEdit />} />
-        <Route path="/Customer/Signup" element={<CustomerSignUp />} />
+        <Route path="/errander" element={<Errander />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/customerprofileedit" element={<CustomerProfileEdit />} />
+        <Route path="/customer/signup" element={<CustomerSignUp />} />
       </Routes>
+      {/* -----------Routes Ends--------------- */}
     </div>
   );
 };

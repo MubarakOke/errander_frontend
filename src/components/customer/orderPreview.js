@@ -11,9 +11,6 @@ import { CreateOrderAction } from "../../Redux/actionCreators/order/orderAction"
 
 
 
-// import { useNavigate } from "react-router-dom";
-
-
 const OrderPreview = ({fields, setContent}) => {
   const dispatch = useDispatch()
   const navigate= useNavigate()
@@ -34,7 +31,6 @@ const OrderPreview = ({fields, setContent}) => {
     e.preventDefault();
     console.log("submission")
     dispatch(CreateOrderAction(fields, navigate))
-    // CreateOrderAction(fields)
   }
   return (
     <div>

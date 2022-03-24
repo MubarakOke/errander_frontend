@@ -22,11 +22,6 @@ const CustomerSignupReducer = (state = INITIAL_STATE, action) => {
         ...state,
         ...action.payload,
       };
-    case type.signinType:
-      return {
-        ...state,
-        ...action.payload,
-      };
 
     default:
       return state;

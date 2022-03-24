@@ -4,8 +4,12 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import { CustomerSignupAction } from "../../Redux/actionCreators/customers/customerActions";
+import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const notify = () => toast("password dont match");
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const [firstName, setFirstName] = useState("");
@@ -14,10 +18,11 @@ const SignUp = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [confirm_password, setconfirm_Password] = useState("");
+  const [showError, setShowError]=useState("hidden");
 
   const handleSubmit = async (e) => {
     if (confirm_password !== password) {
-      alert("password dont match");
+      setShowError("")
       return;
     }
     e.preventDefault();
@@ -31,9 +36,11 @@ const SignUp = () => {
     try {
       await axios
         .post("https://errander.herokuapp.com/api/customer/", formData)
-        .then((res) => dispatch(CustomerSignupAction(res))).then(res=>console.log(res));
+        .then((res) => dispatch(CustomerSignupAction(res)))
+        .then((res) => console.log(res));
+      navigate("/customer/home/order");
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
@@ -107,6 +114,7 @@ const SignUp = () => {
           className="outline-none border-b-2 p-2 mt-6 "
           onChange={handleChange}
         />
+        <div className={`text-[red] mt-6 ${showError}`}>Password doesnt match!</div>
         <input
           placeholder={"Password"}
           type={"password"}
@@ -120,6 +128,7 @@ const SignUp = () => {
           onChange={handleChange}
         />
       </div>
+      <Toaster />
       <div
         onClick={handleSubmit}
         className="cursor-pointer mt-11 flex items-center justify-center bg-[#0E4E48] rounded-full p-3 text-[#fff] font-"

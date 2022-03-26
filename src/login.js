@@ -1,20 +1,46 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from "../src/Assets/svg/Logo.svg";
 import { Link } from "react-router-dom";
 import { AiOutlineEye } from "react-icons/ai";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
-
+import { useSelector, useDispatch } from "react-redux";
+import { SignInAction } from "./Redux/actionCreators/signin/signinActions";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
-  const [showpassword, setShowpassword] = React.useState(0);
-  const [toggleText, setToggleText] = React.useState("password");
-  const [passwordIcon, setPasswordIcon] = React.useState(0);
+  const [showpassword, setShowpassword] = useState(0);
+  const [toggleText, setToggleText] = useState("password");
+  const [passwordIcon, setPasswordIcon] = useState(0);
 
-  const handleChange = (e) => {
+  // ---------------------testing-------------------------------------------
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [showError, setShowError] = useState("hidden");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let formData = new FormData();
+    formData.append("email", email);
+    formData.append("password", password);
+    dispatch(SignInAction(navigate, formData));
+  };
+
+  const handleEmail = (e) => {
+    setEmail(e.target.value);
+  };
+
+  // ---------------------testing-------------------------------------------
+
+  const handlePassword = (e) => {
     if (e.target.value.length > 0) {
       setShowpassword(1);
     } else {
       setShowpassword(0);
     }
+    setPassword(e.target.value);
   };
   const handleShowPassword = () => {
     if (toggleText === "password") {
@@ -47,7 +73,9 @@ const Login = () => {
         {/* -------------------------------email input-------------------------------------- */}
         <div className="relative group mt-10">
           <input
+            onChange={handleEmail}
             type="email"
+            id="email"
             required
             className="w-full h-10 text-sm peer outline-none border-b-2 p-2"
           />
@@ -61,8 +89,9 @@ const Login = () => {
 
         <div className="relative group mt-10 flex">
           <input
-            onChange={handleChange}
+            onChange={handlePassword}
             type={toggleText}
+            id="password"
             required
             className="w-full h-10 text-sm peer outline-none border-b-2 p-2"
           />
@@ -116,7 +145,10 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className="cursor-pointer mt-16 flex items-center justify-center bg-[#0E4E48] rounded-full p-3 text-[#fff] font-">
+      <div
+        onClick={handleSubmit}
+        className="cursor-pointer mt-16 flex items-center justify-center bg-[#0E4E48] rounded-full p-3 text-[#fff] font-"
+      >
         Sign in
       </div>
     </div>

@@ -18,11 +18,11 @@ const SignUp = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [confirm_password, setconfirm_Password] = useState("");
-  const [showError, setShowError]=useState("hidden");
+  const [showError, setShowError] = useState("hidden");
 
   const handleSubmit = async (e) => {
     if (confirm_password !== password) {
-      setShowError("")
+      setShowError("");
       return;
     }
     e.preventDefault();
@@ -33,15 +33,7 @@ const SignUp = () => {
     formData.append("phone", phone);
     formData.append("password", password);
 
-    try {
-      await axios
-        .post("https://errander.herokuapp.com/api/customer/", formData)
-        .then((res) => dispatch(CustomerSignupAction(res)))
-        .then((res) => console.log(res));
-      navigate("/customer/home/order");
-    } catch (error) {
-      console.log(error);
-    }
+    dispatch(CustomerSignupAction(navigate, formData));
   };
 
   const handleChange = (e) => {
@@ -114,7 +106,9 @@ const SignUp = () => {
           className="outline-none border-b-2 p-2 mt-6 "
           onChange={handleChange}
         />
-        <div className={`text-[red] mt-6 ${showError}`}>Password doesnt match!</div>
+        <div className={`text-[red] mt-6 ${showError}`}>
+          Password doesnt match!
+        </div>
         <input
           placeholder={"Password"}
           type={"password"}

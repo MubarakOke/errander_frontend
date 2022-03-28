@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Login from "./login";
-import Errander from "./pages/Errander/index";
+import ErranderSignUp from "./pages/Errander/signup/signUp";
 import Admin from "./pages/Admin/index";
 import CustomerSignUp from "./pages/customer/signUp";
 import Home from "./pages/customer/home/home";
@@ -12,24 +12,31 @@ import OrderDetails from "./pages/customer/orderDetails";
 import Order from "./pages/customer/home/order";
 import Running from "./pages/customer/home/running";
 import History from "./pages/customer/home/history";
-import { Toaster } from 'react-hot-toast';
+import { Toaster } from "react-hot-toast";
 // import {toast, ToastContainer} from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 // toast.configure()
-
-
-
 
 const App = () => {
   return (
     <div>
       {/* ----------------Notification Begins------------- */}
       <div>
-        <Toaster 
-        toastOptions={{success: {duration: 5000, position: 'top-center', style: {background: '#0E4E48', color: 'white'}},
-                       error: {duration: 5000, position: 'top-center', style: {background: 'red', color: 'white'}}
-                     }}               
-        containerStyle={{top: 50}} />
+        <Toaster
+          toastOptions={{
+            success: {
+              duration: 5000,
+              position: "top-center",
+              style: { background: "#0E4E48", color: "white" },
+            },
+            error: {
+              duration: 5000,
+              position: "top-center",
+              style: { background: "red", color: "white" },
+            },
+          }}
+          containerStyle={{ top: 50 }}
+        />
       </div>
       {/* ----------------Notification Ends------------- */}
       {/* -----------Routes Begins--------------- */}
@@ -48,7 +55,8 @@ const App = () => {
         <Route path="/customer/zxcv" element={null} />
         <Route path="/customer/createorder" element={<CreateOrder />} />
 
-        <Route path="/errander" element={<Errander />} />
+        <Route path="/errander/signup" element={<ErranderSignUp />} />
+
         <Route path="/admin" element={<Admin />} />
         <Route path="/customerprofileedit" element={<CustomerProfileEdit />} />
         <Route path="/customer/signup" element={<CustomerSignUp />} />

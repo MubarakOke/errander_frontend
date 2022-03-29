@@ -13,7 +13,7 @@ const Page2 = ({ setContent, content }) => {
           {`${content + 1} of 6`}
         </div>
       </div>
-      <div className="rounded-[30px] flex flex-col shadow-[1px_-2px_51px_-12px_rgba(0,0,0,0.25)] p-6">
+      <div className="rounded-[30px] flex flex-col shadow-[1px_-2px_51px_-12px_rgba(0,0,0,0.25)] p-6 mt-6">
         <h1 className="text-[#8A8B8B] opacity-80 font-semibold">
           Select Gender
         </h1>

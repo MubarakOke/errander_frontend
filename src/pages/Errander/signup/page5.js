@@ -14,7 +14,7 @@ const Page5 = ({ content, setContent }) => {
         </div>
       </div>
       <div className="rounded-[30px] flex flex-col shadow-[1px_-2px_51px_-12px_rgba(0,0,0,0.25)] p-6 mt-6">
-        <h1 className="text-[#8A8B8B] oh1acity-80 font-semibold flex text-center">
+        <h1 className="text-[#8A8B8B] oh1acity-80 font-semibold flex text-center ml-10">
           Can you make use of internet
         </h1>
 

@@ -1,5 +1,5 @@
-import React, {useState} from "react";
-import { IoIosArrowDown, IoIosArrowUp  } from "react-icons/io";
+import React, { useState } from "react";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import {
   BsCalendar2DayFill,
   BsFillChatSquareTextFill,
@@ -11,7 +11,6 @@ import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { ImCancelCircle } from "react-icons/im";
 import { useDispatch } from "react-redux";
 import { DeleteOrderAction } from "../Redux/actionCreators/order/orderAction";
-
 
 const Modal = ({
   orderId,
@@ -30,64 +29,77 @@ const Modal = ({
   shopName,
   items,
   print,
+  bottonVisible,
+  bottonTitle,
+  bottonClickFunction,
 }) => {
+  const [dropdown, setDropdown] = useState(false);
+  const dispatch = useDispatch();
 
-  const [dropdown, setDropdown]= useState(false)
-  const dispatch= useDispatch()
-  
-  const deleteOrder= ()=>{
-    dispatch(DeleteOrderAction(orderId))
-  }
+  const deleteOrder = () => {
+    dispatch(DeleteOrderAction(orderId));
+  };
 
-  const renderStatus= ()=>{
-    if(status==='running'){
+  const renderStatus = () => {
+    if (status === "running") {
       return (
-        <div className={`flex items-center justify-center bg-[#62C78A] w-2/5 p-5 rounded-tr-[30px] rounded-bl-[15px]`}>
-            <span className="text-[15px] font-bold text-[white]">
-              Running
-            </span>
-            <div className="ml-2 text-[20px] text-[white]">
-              <MdOutlineRemoveRedEye size="25px"/>
-            </div>
+        <div
+          className={`flex items-center justify-center bg-[#62C78A] w-2/5 p-5 rounded-tr-[30px] rounded-bl-[15px]`}
+        >
+          <span className="text-[15px] font-bold text-[white]">Running</span>
+          <div className="ml-2 text-[20px] text-[white]">
+            <MdOutlineRemoveRedEye size="25px" />
           </div>
-        );
-      }
-    if(status==='initiated'){
-        return (
-          <div className={`flex items-center justify-center bg-[#FDBC3F] w-2/5 p-5 rounded-tr-[30px] rounded-bl-[15px]`}>
-            <span className="text-[15px] font-bold text-[white]">
-              Initiated
-            </span>
-            <div className="ml-2 text-[20px] text-[red]">
-              <ImCancelCircle onClick={()=>{deleteOrder()}} size="25px"/>
-            </div>
-          </div>
-        );
-      }
+        </div>
+      );
     }
-
+    if (status === "initiated") {
+      return (
+        <div
+          className={`flex items-center justify-center bg-[#FDBC3F] w-2/5 p-5 rounded-tr-[30px] rounded-bl-[15px]`}
+        >
+          <span className="text-[15px] font-bold text-[white]">Initiated</span>
+          <div className="ml-2 text-[20px] text-[red]">
+            <ImCancelCircle
+              onClick={() => {
+                deleteOrder();
+              }}
+              size="25px"
+            />
+          </div>
+        </div>
+      );
+    }
+  };
 
   return (
     <div>
       {/* ====================Modal Start============================= */}
       <div className="mt-5 pb-5 rounded-[30px] z-30 shadow-[1px_-2px_51px_-12px_rgba(0,0,0,0.25)]">
-      {/* ---------------------Modal Header  Start---------------------------- */}
-      <div>
-        {/* ----------------------------Title--------------------  */}
-        <div className="flex justify-between bg-[#fff] mb-3  rounded-t-[30px]">
-          <div className="flex flex-row p-5 font-bold text-[#616262]">
-            Order {orderId}
+        {/* ---------------------Modal Header  Start---------------------------- */}
+        <div>
+          {/* ----------------------------Title--------------------  */}
+          <div className="flex justify-between bg-[#fff] mb-3  rounded-t-[30px]">
+            <div className="flex flex-row p-5 font-bold text-[#616262]">
+              Order {orderId}
+            </div>
+            {dropdown ? (
+              <div className="flex flex-row p-5">
+                <IoIosArrowUp
+                  className="text-[24px]"
+                  onClick={() => setDropdown(false)}
+                />
+              </div>
+            ) : (
+              <div className="flex flex-row p-5">
+                <IoIosArrowDown
+                  className="text-[24px]"
+                  onClick={() => setDropdown(true)}
+                />
+              </div>
+            )}
+            {renderStatus()}
           </div>
-          {dropdown?
-          (<div className="flex flex-row p-5">
-          <IoIosArrowUp className="text-[24px]"onClick={()=>setDropdown(false)} />
-          </div>):(
-          <div className="flex flex-row p-5" >
-            <IoIosArrowDown className="text-[24px]" onClick={()=>setDropdown(true)}/>
-          </div>)
-          }
-          {renderStatus()}
-        </div>
           {/* ----------------------------Direction--------------------  */}
           <div className="flex flex-col bg-[#fff] px-5 rounded-b-[30px]">
             <div className="flex justify-between py-4 px-6 font-medium bg-[#F2F2F2] w-full rounded-[50px] text-[#2c2c2c]">
@@ -99,7 +111,11 @@ const Modal = ({
         </div>
         {/* ---------------------Modal Header End---------------------------- */}
         {/* ----------------------------Modal Body Start--------------------  */}
-        <div className={`flex flex-col bg-[#fff] px-5 ${dropdown? '':'hidden'} rounded-b-[30px]`}>
+        <div
+          className={`flex flex-col bg-[#fff] px-5 ${
+            dropdown ? "" : "hidden"
+          } rounded-b-[30px]`}
+        >
           {/* ----------------------------content--------------------  */}
           <div className="mt-4 grid grid-cols-4 gap-3">
             <div className="flex flex-col items-start col-span-2">
@@ -181,6 +197,20 @@ const Modal = ({
               })}
             </div>
           </div>
+
+          {bottonVisible ? (
+            <div className="flex items-center justify-center mt-4">
+              <div
+                className="text-[#fff] bg-[#0E4E48] w-[40%] py-3 items-center text-center rounded-[30px] cursor-pointer"
+                onClick={bottonClickFunction}
+              >
+                {bottonTitle}
+              </div>
+            </div>
+          ) : (
+            ""
+          )}
+
           {/* ----------------------------content end--------------------  */}
           {print ? (
             <div>

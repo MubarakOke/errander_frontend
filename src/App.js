@@ -6,7 +6,9 @@ import Admin from "./pages/Admin/index";
 import CustomerSignUp from "./pages/customer/signUp";
 import Home from "./pages/customer/home/home";
 import Profile from "./pages/customer/Profile/profile";
+import ErranderProfile from "./pages/Errander/profile/profile";
 import CustomerProfileEdit from "./pages/customer/Profile/CustomerProfileEdit";
+import ErranderProfileEdit from "./pages/Errander/profile/ErranderProfileEdit";
 import CreateOrder from "./pages/customer/createOrder";
 import OrderDetails from "./pages/customer/orderDetails";
 import Order from "./pages/customer/home/order";
@@ -51,6 +53,8 @@ const App = () => {
           <Route path="/customer/home/history" element={<History />} />
         </Route>
         <Route path="/customer/profile" element={<Profile />} />
+        <Route path="/errander/profile" element={<ErranderProfile />} />
+
         <Route path="/customer/blog" element={null} />
         <Route path="/customer/zxcv" element={null} />
         <Route path="/customer/createorder" element={<CreateOrder />} />
@@ -59,6 +63,7 @@ const App = () => {
 
         <Route path="/admin" element={<Admin />} />
         <Route path="/customerprofileedit" element={<CustomerProfileEdit />} />
+        <Route path="/erranderprofileedit" element={<ErranderProfileEdit />} />
         <Route path="/customer/signup" element={<CustomerSignUp />} />
       </Routes>
       {/* -----------Routes Ends--------------- */}

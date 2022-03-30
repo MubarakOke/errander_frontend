@@ -71,18 +71,18 @@ const adminSidebarContent = [
 
 const erranderSidebarContent = [
   {
-    link: "/customer/home",
+    link: "/errander/home",
     icon: home,
     title: "Home",
   },
   {
-    link: "/customer/profile",
+    link: "/errander/profile",
     icon: profile,
     title: "Profile",
   },
 
   {
-    link: "/customer/logout",
+    link: "#",
     icon: logout,
     title: "Logout",
   },

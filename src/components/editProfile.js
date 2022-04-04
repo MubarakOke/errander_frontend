@@ -53,4 +53,5 @@ const EditProfile = ({ name, phone, email }) => {
   );
 };
 
+
 export default EditProfile;

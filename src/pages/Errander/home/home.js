@@ -1,31 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link, Outlet } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import Navbar from "../../../components/Navbar";
-import AddOrderButton from "../../../components/customer/addOrderButton";
-import { FetchOrderAction, sho } from "../../../Redux/actionCreators/customers/orderAction";
-
-
 
 const Index1 = () => {
   const [hamburger, setHamburger] = React.useState(0);
-  const [activeTab, setActiveTab] = React.useState();
-  const dispatch= useDispatch();
-  const pathname = window.location.pathname;
-
-
-  useEffect(()=>{
-    dispatch(FetchOrderAction())
-  }, []);
-
-  const showAddOrderButton= ()=>{
-    if(pathname.includes("customer/home/order")||activeTab===0){
-      return <AddOrderButton/>
-    }
-    else{
-      return
-    }
-  }
+  const [activetab, setActivetab] = React.useState(0);
 
   return (
     <div>
@@ -33,12 +12,9 @@ const Index1 = () => {
         title="Home"
         hamburger={hamburger}
         setHamburger={setHamburger}
-        show="customer"
+        show="errander"
       />
-      {/* ---------------Add Order Button Starts-------------- */}
-      {showAddOrderButton()}
-      {/* ---------------Add Order Button Ends-------------- */}
-      {/* --------------Navigation begins------------------ */} 
+
       <div
         className={`${
           hamburger ? "blur-sm" : "blur-none"
@@ -48,21 +24,21 @@ const Index1 = () => {
         <div className="w-[80%] mx-auto ">
           <div className="flex items-center justify-between w-full">
             <Link
-              onClick={()=>{setActiveTab(0)}}
-              to="/customer/home/order"
+              to="/errander/home/errand"
+              onClick={() => setActivetab(0)}
               className={`${
-                pathname.includes("customer/home/order")
+                activetab === 0
                   ? "text-[#0E4E48] font-semibold border-b-2 border-[#0E4E48]"
                   : "text-[#999A9A]"
               } cursor-pointer transition duration-300 font-[Roboto] font-bold text-[18px]`}
             >
-              Order
+              Errand
             </Link>
             <Link
-              to="/customer/home/running"
-              onClick={()=>{setActiveTab(1)}}
+              to="/errander/home/running"
+              onClick={() => setActivetab(1)}
               className={`${
-                pathname.includes("customer/home/running")
+                activetab === 1
                   ? "text-[#0E4E48] font-semibold border-b-2 border-[#0E4E48]"
                   : "text-[#999A9A]"
               } cursor-pointer transition duration-300 font-[Roboto] font-bold text-[18px]`}
@@ -70,10 +46,10 @@ const Index1 = () => {
               Running
             </Link>
             <Link
-              to="/customer/home/history"
-              onClick={()=>{setActiveTab(2)}}
+              onClick={() => setActivetab(2)}
+              to="/errander/home/history"
               className={`${
-                pathname.includes("customer/home/history")
+                activetab === 2
                   ? "text-[#0E4E48] font-semibold border-b-2 border-[#0E4E48]"
                   : "text-[#999A9A]"
               } cursor-pointer transition duration-300 font-[Roboto] font-bold text-[18px]`}

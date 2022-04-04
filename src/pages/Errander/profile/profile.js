@@ -3,6 +3,7 @@ import Avatar from "../../../Assets/svg/Avatar.svg";
 import Edit from "../../../Assets/svg/edit.svg";
 import { Link } from "react-router-dom";
 import Navbar from "../../../components/Navbar";
+import { MdOutlineStarPurple500 } from "react-icons/md";
 
 const Profile = () => {
   const [hamburger, setHamburger] = React.useState(0);
@@ -13,7 +14,7 @@ const Profile = () => {
         title="Profile"
         hamburger={hamburger}
         setHamburger={setHamburger}
-        show="customer"
+        show="errander"
       />
       <div
         className={`${
@@ -25,7 +26,7 @@ const Profile = () => {
         </div>
 
         <div className="flex justify-end ">
-          <Link to="/CustomerProfileEdit">
+          <Link to="/erranderprofileedit">
             {" "}
             <img src={Edit} alt="Edit" className="cursor-pointer" />
           </Link>
@@ -35,26 +36,28 @@ const Profile = () => {
             Kimmy Natasa
           </span>
         </div>
-        <div className="flex items-end justify-between mt-6">
-          <div className="flex flex-col items-center">
-            <span className="font-bold text-[20px] font-[roboto]">1,260</span>
-            <span className="text-[#AFAFAF] text-[16px] font-[roboto]">
-              total Order
-            </span>
+        <center>
+          <div className="flex items-end justify-between mt-6 w-[80%]">
+            <div className="flex flex-col items-center">
+              <span className="font-bold text-[20px] font-[roboto]">50</span>
+              <span className="text-[#AFAFAF] text-[16px] font-[roboto]">
+                Completed Errand
+              </span>
+            </div>
+            <div className="flex items-center">
+              <div className="mr-4">
+                <MdOutlineStarPurple500 className="text-[35px] text-[#FFB461]" />
+              </div>
+
+              <div className="flex flex-col items-center">
+                <span className="font-bold text-[20px] font-[roboto]">5</span>
+                <span className="text-[#AFAFAF] text-[16px] font-[roboto]">
+                  (296)
+                </span>
+              </div>
+            </div>
           </div>
-          <div className="flex flex-col items-center">
-            <span className="font-bold text-[20px] font-[roboto]">1,260</span>
-            <span className="text-[#AFAFAF] text-[16px] font-[roboto]">
-              Cancel Order
-            </span>
-          </div>
-          <div className="flex flex-col items-center">
-            <span className="font-bold text-[20px] font-[roboto]">1,260</span>
-            <span className="text-[#AFAFAF] text-[16px] font-[roboto]">
-              Completed Order
-            </span>
-          </div>
-        </div>
+        </center>
 
         <div className="flex flex-col mt-10 justify-between h-[220px]">
           <div className="flex flex-col">

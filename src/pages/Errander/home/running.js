@@ -1,24 +1,23 @@
 import React from "react";
+import { MdOutlineRemoveRedEye } from "react-icons/md";
 import Modal from "../../../components/modal";
-import { MdOutlineKeyboardArrowUp } from "react-icons/md";
-import { ImCancelCircle } from "react-icons/im";
 
-const History = () => {
+const Running = () => {
   return (
-    <div className="pb-12">
+    <div>
       <Modal
         orderId="#30528"
-        heading="Completed"
-        headingIcon={<MdOutlineKeyboardArrowUp />}
+        heading="Running"
+        headingIcon={<MdOutlineRemoveRedEye />}
         headingIconColor="white"
         headingColor="#62C78A"
         arrowVisible={1}
-        headingFrom="Mandate"
-        headingTo="Oko-erin"
+        print={0}
+        headingFrom="Tanke"
+        headingTo="Asadam"
         calender="2020/03/27 - 09:00"
         phone="0909999999"
         rider="Lawal Alaba"
-        print={1}
         message="Please make sure the order are complete o"
         shopName="Shoprite"
         items={[
@@ -35,20 +34,22 @@ const History = () => {
             quantity: "14 pieces",
           },
         ]}
+        bottonVisible={1}
+        bottonTitle="Finish"
       />
       <Modal
         orderId="#30528"
-        heading="Completed"
-        headingIcon={<MdOutlineKeyboardArrowUp />}
+        heading="Running"
+        headingIcon={<MdOutlineRemoveRedEye />}
         headingIconColor="white"
-        headingColor="#FF6666"
+        headingColor="#62C78A"
         arrowVisible={1}
-        headingFrom="Mandate"
-        headingTo="Oko-erin"
+        print={0}
+        headingFrom="Tanke"
+        headingTo="Asadam"
         calender="2020/03/27 - 09:00"
         phone="0909999999"
         rider="Lawal Alaba"
-        print={1}
         message="Please make sure the order are complete o"
         shopName="Shoprite"
         items={[
@@ -65,9 +66,11 @@ const History = () => {
             quantity: "14 pieces",
           },
         ]}
+        bottonVisible={1}
+        bottonTitle="Finish"
       />
     </div>
   );
 };
 
-export default History;
+export default Running;

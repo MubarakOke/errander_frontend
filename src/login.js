@@ -71,23 +71,29 @@ const Login = () => {
       </div>
       <div className="flex flex-col">
         {/* -------------------------------email input-------------------------------------- */}
-        <div className="relative group mt-10">
+        <div className="w-full relative group mt-10">
           <input
             onChange={handleEmail}
-            type="email"
+            type="text"
             id="email"
             required
             className="w-full h-10 text-sm peer outline-none border-b-2 p-2"
           />
-
-          <label className="text-[#8A8B8B] pb-4 transform transition-all absolute top-0 left-0 h-full flex items-center pl-1 text-sm group-focus-within:text-xs peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0">
+          <label
+            for="email"
+            className="text-[#8A8B8B] pb-4 transform transition-all absolute top-0 left-0 h-full flex items-center pl-1 text-sm group-focus-within:text-xs peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0"
+          >
             Email
           </label>
+
+          {/* <label className="text-[#8A8B8B] pb-4 transform transition-all absolute top-0 left-0 h-full flex items-center pl-1 text-sm group-focus-within:text-xs peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0">
+            Email
+          </label> */}
         </div>
 
         {/* --------------------------------Password input----------------------------------- */}
 
-        <div className="relative group mt-10 flex">
+        <div className="w-full relative group mt-10 flex">
           <input
             onChange={handlePassword}
             type={toggleText}
@@ -96,7 +102,10 @@ const Login = () => {
             className="w-full h-10 text-sm peer outline-none border-b-2 p-2"
           />
 
-          <label className="text-[#8A8B8B] pb-4 transform transition-all absolute top-0 left-0 h-full flex items-center pl-1 text-sm group-focus-within:text-xs peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0">
+          <label
+            for="password"
+            className="text-[#8A8B8B] pb-4 transform transition-all absolute top-0 left-0 h-full flex items-center pl-1 text-sm group-focus-within:text-xs peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0"
+          >
             Password
           </label>
           <div

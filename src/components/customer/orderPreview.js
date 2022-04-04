@@ -7,7 +7,7 @@ import { MdInventory2 } from "react-icons/md";
 import { MdOutlineArrowBackIosNew } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { CreateOrderAction } from "../../Redux/actionCreators/order/orderAction";
+import { CreateOrderAction } from "../../Redux/actionCreators/customers/orderAction";
 
 
 

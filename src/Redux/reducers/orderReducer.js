@@ -1,4 +1,4 @@
-import * as type from "../actionCreators/order/orderType";
+import * as type from "../actionCreators/customers/orderType";
 import _ from 'lodash'
 
 

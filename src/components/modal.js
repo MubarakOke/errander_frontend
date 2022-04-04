@@ -10,7 +10,7 @@ import { FaTruck } from "react-icons/fa";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { ImCancelCircle } from "react-icons/im";
 import { useDispatch } from "react-redux";
-import { DeleteOrderAction } from "../Redux/actionCreators/order/orderAction";
+import { DeleteOrderAction } from "../Redux/actionCreators/customers/orderAction";
 
 const Modal = ({
   orderId,

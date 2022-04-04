@@ -18,6 +18,8 @@ import History from "./pages/customer/home/history";
 import Errand from "./pages/Errander/home/errand";
 import ErranderHistory from "./pages/Errander/home/history";
 import ErranderRunning from "./pages/Errander/home/running";
+import LoadingOverlay from 'react-loading-overlay'
+import SyncLoader from 'react-spinners/SyncLoader'
 import { Toaster } from "react-hot-toast";
 // import {toast, ToastContainer} from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
@@ -27,6 +29,17 @@ const App = () => {
   return (
     <div>
       {/* ----------------Notification Begins------------- */}
+      <LoadingOverlay
+        active={false}
+        spinner={<SyncLoader color={'#0E4E48'}/>}
+        styles={{
+          overlay: (base) => ({
+            ...base,
+            position: 'fixed'
+            })
+          }}
+       >
+
       <div>
         <Toaster
           toastOptions={{
@@ -77,6 +90,7 @@ const App = () => {
         <Route path="/customer/signup" element={<CustomerSignUp />} />
       </Routes>
       {/* -----------Routes Ends--------------- */}
+      </LoadingOverlay>
     </div>
   );
 };

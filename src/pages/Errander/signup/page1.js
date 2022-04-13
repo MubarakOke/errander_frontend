@@ -26,61 +26,76 @@ const Page1 = ({ setContent, content }) => {
       {/* -------------------------input value--------------------- */}
       <div className="relative group mt-8">
         <input
+          id="1"
           type="text"
           required
           className="w-full h-10 text-sm peer outline-none border-b-2 p-2"
         />
-        <label className="text-[#8A8B8B] font-[poppins] transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 text-sm group-focus-within:text-xs peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0">
+        <label
+          for="1"
+          className="text-[#8A8B8B] font-[poppins] transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 text-sm group-focus-within:text-xs peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0"
+        >
           Full Name
         </label>
       </div>
       <div className="relative group mt-8">
         <input
+          id="2"
           type="text"
           required
           className="w-full h-10 text-sm peer outline-none border-b-2 p-2"
         />
-        <label className="text-[#8A8B8B] font-[poppins] transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 text-sm group-focus-within:text-xs peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0">
+        <label
+          for="2"
+          className="text-[#8A8B8B] font-[poppins] transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 text-sm group-focus-within:text-xs peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0"
+        >
           Email
         </label>
       </div>
       <div className="relative group mt-8">
         <input
+          id="3"
           type="text"
           required
           className="w-full h-10 text-sm peer outline-none border-b-2 p-2"
         />
-        <label className="text-[#8A8B8B] font-[poppins] transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 text-sm group-focus-within:text-xs peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0">
+        <label
+          for="3"
+          className="text-[#8A8B8B] font-[poppins] transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 text-sm group-focus-within:text-xs peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0"
+        >
           Phone Number
         </label>
       </div>
       <div className="relative group mt-8">
         <input
+          id="4"
           type="text"
           required
           className="w-full h-10 text-sm peer outline-none border-b-2 p-2"
         />
-        <label className="text-[#8A8B8B] font-[poppins] transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 text-sm group-focus-within:text-xs peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0">
+        <label for="4" className="text-[#8A8B8B] font-[poppins] transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 text-sm group-focus-within:text-xs peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0">
           Home Address
         </label>
       </div>
       <div className="relative group mt-8">
         <input
+          id="5"
           type="text"
           required
           className="w-full h-10 text-sm peer outline-none border-b-2 p-2"
         />
-        <label className="text-[#8A8B8B] font-[poppins] transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 text-sm group-focus-within:text-xs peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0">
+        <label for="5" className="text-[#8A8B8B] font-[poppins] transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 text-sm group-focus-within:text-xs peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0">
           Local Government Area
         </label>
       </div>
       <div className="relative group mt-8">
         <input
+          id="6"
           type="text"
           required
           className="w-full h-10 text-sm peer outline-none border-b-2 p-2"
         />
-        <label className="text-[#8A8B8B] font-[poppins] transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 text-sm group-focus-within:text-xs peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0">
+        <label for="6" className="text-[#8A8B8B] font-[poppins] transform transition-all absolute top-0 left-0 h-full flex items-center pl-2 text-sm group-focus-within:text-xs peer-valid:text-xs group-focus-within:h-1/2 peer-valid:h-1/2 group-focus-within:-translate-y-full peer-valid:-translate-y-full group-focus-within:pl-0 peer-valid:pl-0">
           Home Address
         </label>
       </div>

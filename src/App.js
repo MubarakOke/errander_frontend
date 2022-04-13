@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Login from "./login";
 import ErranderSignUp from "./pages/Errander/signup/signUp";
-import Admin from "./pages/Admin/index";
+import Admin from "./pages/Admin/Dashboard/index";
 import CustomerSignUp from "./pages/customer/signUp";
 import Home from "./pages/customer/home/home";
 import ErranderHome from "./pages/Errander/home/home";

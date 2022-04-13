@@ -20,7 +20,7 @@ const ErranderInfo = ({ colh1, colh2, colh3, content, contentName }) => {
             return (
               <div
                 key={id}
-                className="grid grid-cols-3 gap-3 border-b-[1px] py-2 hover:bg-[#EAF3EF] font-[Montserrat]"
+                className="grid grid-cols-3 gap-3 border-b-[1px] py-2 hover:bg-[#EAF3EF] font-[Montserrat] font-medium text-[14px]"
               >
                 <div className="text-center text-[#05365A]">{value.name}</div>
                 <div className="text-center text-[#05365A]">{value.id}</div>
@@ -35,7 +35,7 @@ const ErranderInfo = ({ colh1, colh2, colh3, content, contentName }) => {
             return (
               <div
                 key={id}
-                className="grid grid-cols-3 gap-3 border-b-[1px] py-2 font-[Montserrat]"
+                className="grid grid-cols-3 gap-3 border-b-[1px] py-2 font-[Montserrat] font-medium text-[14px]"
               >
                 <div className="text-center text-[#05365A]">{value.name}</div>
                 <div className="text-center text-[#05365A]">{value.phone}</div>

@@ -19,6 +19,9 @@ import Errand from "./pages/Errander/home/errand";
 import ErranderHistory from "./pages/Errander/home/history";
 import ErranderRunning from "./pages/Errander/home/running";
 import { Toaster } from "react-hot-toast";
+import Monitor from "./pages/Admin/Monitor/monitor";
+import ErranderMonitor from "./pages/Admin/Monitor/erranderMonitor";
+import CustomerMonitor from "./pages/Admin/Monitor/customerMonitor";
 // import {toast, ToastContainer} from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 // toast.configure()
@@ -73,6 +76,11 @@ const App = () => {
 
         <Route path="/admin/dashboard" element={<Admin />} />
         <Route path="/admin" element={<Admin />} />
+        <Route path="/admin/monitor" element={<Monitor />}>
+          <Route index element={<ErranderMonitor />} />
+          <Route path="/admin/monitor/errander" element={<ErranderMonitor />} />
+          <Route path="/admin/monitor/customer" element={<CustomerMonitor />} />
+        </Route>
         <Route path="/customerprofileedit" element={<CustomerProfileEdit />} />
         <Route path="/erranderprofileedit" element={<ErranderProfileEdit />} />
         <Route path="/customer/signup" element={<CustomerSignUp />} />

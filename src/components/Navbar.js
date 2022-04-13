@@ -51,7 +51,7 @@ const adminSidebarContent = [
     title: "Dashboard",
   },
   {
-    link: "/customer/profile",
+    link: "/admin/monitor",
     icon: monitor,
     title: "Monitor",
   },

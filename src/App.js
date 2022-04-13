@@ -71,6 +71,7 @@ const App = () => {
 
         <Route path="/errander/signup" element={<ErranderSignUp />} />
 
+        <Route path="/admin/dashboard" element={<Admin />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/customerprofileedit" element={<CustomerProfileEdit />} />
         <Route path="/erranderprofileedit" element={<ErranderProfileEdit />} />

@@ -46,7 +46,7 @@ const customerSidebarContent = [
 
 const adminSidebarContent = [
   {
-    link: "/customer/home",
+    link: "/admin/dashboard",
     icon: dashboard,
     title: "Dashboard",
   },

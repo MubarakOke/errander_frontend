@@ -22,6 +22,10 @@ import { Toaster } from "react-hot-toast";
 import Monitor from "./pages/Admin/Monitor/monitor";
 import ErranderMonitor from "./pages/Admin/Monitor/erranderMonitor";
 import CustomerMonitor from "./pages/Admin/Monitor/customerMonitor";
+import AdminHistory from "./pages/Admin/History/history";
+import Today from "./pages/Admin/History/today";
+import ThisWeek from "./pages/Admin/History/thisWeek";
+import AdminDate from "./pages/Admin/History/date";
 // import {toast, ToastContainer} from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 // toast.configure()
@@ -81,6 +85,13 @@ const App = () => {
           <Route path="/admin/monitor/errander" element={<ErranderMonitor />} />
           <Route path="/admin/monitor/customer" element={<CustomerMonitor />} />
         </Route>
+        <Route path="/admin/history" element={<AdminHistory />}>
+          <Route index element={<Today />} />
+          <Route path="/admin/history/today" element={<Today />} />
+          <Route path="/admin/history/thisweek" element={<ThisWeek />} />
+          <Route path="/admin/history/date" element={<AdminDate />} />
+        </Route>
+
         <Route path="/customerprofileedit" element={<CustomerProfileEdit />} />
         <Route path="/erranderprofileedit" element={<ErranderProfileEdit />} />
         <Route path="/customer/signup" element={<CustomerSignUp />} />

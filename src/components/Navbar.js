@@ -57,7 +57,7 @@ const adminSidebarContent = [
   },
 
   {
-    link: "/customer/blog",
+    link: "/admin/history",
     icon: history,
     title: "History",
   },

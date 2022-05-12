@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiFillHome } from "react-icons/ai";
-import { FaUserAlt } from "react-icons/fa";
+import { FaUserAlt, FaBlog } from "react-icons/fa";
 import { SiGooglemessages } from "react-icons/si";
 import { RiLogoutCircleFill } from "react-icons/ri";
 import { RiDashboard3Fill } from "react-icons/ri";
@@ -18,6 +18,7 @@ const logout = <RiLogoutCircleFill />;
 const dashboard = <RiDashboard3Fill />;
 const monitor = <FiMonitor />;
 const history = <AiOutlineHistory />;
+const blogger = <FaBlog />;
 
 const customerSidebarContent = [
   {
@@ -54,6 +55,11 @@ const adminSidebarContent = [
     link: "/admin/monitor",
     icon: monitor,
     title: "Monitor",
+  },
+  {
+    link: "/admin/blogger",
+    icon: blogger,
+    title: "Blogger",
   },
 
   {

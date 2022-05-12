@@ -26,6 +26,8 @@ import AdminHistory from "./pages/Admin/History/history";
 import Today from "./pages/Admin/History/today";
 import ThisWeek from "./pages/Admin/History/thisWeek";
 import AdminDate from "./pages/Admin/History/date";
+import Blogger from "./pages/Admin/Blog/blog"
+import CreateBlogger from "./pages/Admin/Blog/create_blogger";
 // import {toast, ToastContainer} from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
 // toast.configure()
@@ -72,7 +74,8 @@ const App = () => {
         <Route path="/customer/profile" element={<Profile />} />
         <Route path="/errander/profile" element={<ErranderProfile />} />
 
-        <Route path="/customer/blog" element={null} />
+        <Route path="/admin/blogger" element={<Blogger/>} />
+        <Route path="/admin/create_blogger" element={<CreateBlogger/>} />
         <Route path="/customer/zxcv" element={null} />
         <Route path="/customer/createorder" element={<CreateOrder />} />
 
